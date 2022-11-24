@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 
 const schema =mongoose.Schema
 
@@ -17,7 +17,8 @@ const blogSchema= new schema({
         required:true
     },
     user:{
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref:"User",
         required:true
     },
 })
